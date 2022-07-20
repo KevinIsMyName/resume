@@ -4,11 +4,7 @@
 
 **You must have [TeX](https://tug.org/texlive/quickinstall.html) installed!**
 
-Windows: Install [TexLive](https://tug.org/texlive/windows.html#install) with install-tl-windows.exe
-
-```sh
-$ tlmgr install texlive-xetex texlive-fonts-extra
-```
+Windows: Install [TeXLive](https://tug.org/texlive/windows.html#install) with install-tl-windows.exe
 
 macOS: Install [MacTeX](https://tug.org/mactex/)
 
@@ -35,7 +31,9 @@ $ xelatex resume.tex # Windows and Ubuntu ONLY
 $ lualatex resume.tex # macOS ONLY
 ```
 
-Using VS Code? Try this [LaTeX extension by James Yu](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)!
+Once the command terminates cleanly, you should see a PDF file called `resume.pdf` in the current directory.
+
+Editing on VS Code? Try this [LaTeX extension by James Yu](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)!
 
 ## Preview an example PDF
 
@@ -43,4 +41,4 @@ Using VS Code? Try this [LaTeX extension by James Yu](https://marketplace.visual
 
 ## Disclaimer
 
-I forked this repository from [https://github.com/posquit0/Awesome-CV/](https://github.com/posquit0/Awesome-CV/) and edited the template for my own purpose.
+I forked this repository from [https://github.com/posquit0/Awesome-CV/](https://github.com/posquit0/Awesome-CV/) and edited the template to my own needs.
