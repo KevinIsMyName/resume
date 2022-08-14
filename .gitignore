@@ -1,0 +1,32 @@
+.vscode
+
+### TeX ###
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+
+## Intermediate documents:
+*.dvi
+*-converted-to.*
+
+### Editor ###
+## Vim & Emacs temp files:
+.*sw[op]
+*~
+
+### Mac OS X ###
+## Mac OS X metadata files:
+*.DS_Store
+
+### VS Code LaTeX Extension ###
+*synctex*
+*temp*
+*.fdb_latexmk
+
+# Ignore PDF because GH Action will build it.
+*.pdf
