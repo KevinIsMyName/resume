@@ -1,4 +1,4 @@
-name: Build and upload PDF as a release
+name: Build and upload PDF
 
 on:
   push:
@@ -23,28 +23,27 @@ jobs:
         with:
           name: resume
           path: resume.pdf
-  release:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v3
-        with:
-          name: resume
-      - name: Get short commit hash
-        id: commit_hash
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
-      - uses: mathieudutour/github-tag-action@v6.0
-        id: tag_version
-        with:
-          tag_prefix: ""
-          # custom_tag: prerelease-${{ steps.commit_hash.outputs.sha_short }} # Every commit is prerelease. Add bumping based on branches (master, prerelease*) later.
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: ncipollo/release-action@v1
-        id: release
-        with:
-          name: ${{ steps.tag_version.outputs.new_tag }}
-          tag: ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
-          artifacts: "resume.pdf"
-
+  # release:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: resume
+  #     - name: Get short commit hash
+  #       id: commit_hash
+  #       run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+  #     - uses: mathieudutour/github-tag-action@v6.0
+  #       id: tag_version
+  #       with:
+  #         tag_prefix: ""
+  #         # custom_tag: prerelease-${{ steps.commit_hash.outputs.sha_short }} # Every commit is prerelease. Add bumping based on branches (master, prerelease*) later.
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #     - uses: ncipollo/release-action@v1
+  #       id: release
+  #       with:
+  #         name: ${{ steps.tag_version.outputs.new_tag }}
+  #         tag: ${{ steps.tag_version.outputs.new_tag }}
+  #         body: ${{ steps.tag_version.outputs.changelog }}
+  #         artifacts: "resume.pdf"
