@@ -30,3 +30,4 @@
 
 # Ignore PDF because GH Action will build it.
 *.pdf
+*.xdv
